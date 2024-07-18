@@ -1,0 +1,32 @@
+{
+    "type": "module",
+    "name": "kemono-sync",
+    "version": "1.0.0",
+    "main": "download.js",
+    "dependencies": {
+        "@supercharge/promise-pool": "^3.2.0",
+        "asynckit": "^0.4.0",
+        "axios": "^1.7.2",
+        "axios-rate-limit": "^1.4.0",
+        "combined-stream": "^1.0.8",
+        "commander": "^12.1.0",
+        "delayed-stream": "^1.0.0",
+        "follow-redirects": "^1.15.6",
+        "form-data": "^4.0.0",
+        "mime-db": "^1.52.0",
+        "mime-types": "^2.1.35",
+        "proxy-from-env": "^1.1.0"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "beer-wolf",
+    "license": "Apache-2.0",
+    "description": "",
+    "devDependencies": {
+        "@eslint/js": "^9.6.0",
+        "eslint": "^9.6.0",
+        "globals": "^15.8.0"
+    }
+}
