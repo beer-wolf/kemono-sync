@@ -24,26 +24,22 @@ program
 
 program.parse();
 
-const poolSize = program.opts().parallel * 2;
-const http = rateLimit(axios.create(), {
-    maxRequests: program.opts().parallel,
-    perMilliseconds: 1000,
-});
-
 const creatorId = program.opts().id;
 const platform = program.opts().platform;
-
 const baseDir = program.opts().dir;
+const rps = program.opts().parallel;
+
+const poolSize = rps * 2;
+const http = rateLimit(axios.create(), {
+    maxRPS: rps,
+});
 
 let o = 0;
 let files = [];
 let complete = [];
 while (true) {
     let res = await runWith429Reprocessed(
-        async () =>
-            await http.get(`${baseUrl}/api/v1/${platform}/user/${creatorId}?o=${o}`, {
-                "User-Agent": "Axios based downloader",
-            })
+        async () => await http.get(`${baseUrl}/api/v1/${platform}/user/${creatorId}?o=${o}`)
     );
     console.log(`Requesting posts ${o}-${o + 50}`);
     if (res.data.length == 0) {

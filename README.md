@@ -17,7 +17,7 @@ There are also three more optional parameters:
 
 - `-p` specifies the platform of downloads (patreon if not specified). You can get it from the part of the url between `kemono.su/` and `/user`: `https://kemono.su/{platform}/user/{id}`.
 - `-d` specifies the target directory for the files to be downloaded to. By default, creates a new directory `downloads` at the current path.
-- `n` specifies the number of parallel downloads. Downloading too fast will trigger multiple 429 errors, so leaving this parameter as the default is advised.
+- `-n` specifies the number of parallel downloads. Downloading too fast will trigger multiple 429 errors, so leaving this parameter as the default is advised.
 
 
 ## Known issues
