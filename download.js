@@ -24,10 +24,7 @@ program
 
 program.parse();
 
-const creatorId = program.opts().id;
-const platform = program.opts().platform;
-const baseDir = program.opts().dir;
-const rps = program.opts().parallel;
+const { id: creatorId, platform, dir: baseDir, parallel: rps } = program.opts();
 
 const poolSize = rps * 2;
 const http = rateLimit(axios.create(), {
